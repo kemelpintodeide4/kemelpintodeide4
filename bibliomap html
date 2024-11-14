@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bibliomap</title> <!-- Alterado para o nome do site -->
+    <link rel="stylesheet" href="dora.css"> <!-- Link para o arquivo CSS externo -->
+    <link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet"> <!-- Fonte Creepster -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- FontAwesome -->
+</head>
+<body>
+    <!-- Popup de Boas-vindas -->
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <h2>Obrigado por visitar o Bibliomap!</h2>
+            <p>Nos deixe sua avaliação para melhorar nosso serviço!</p>
+            <button onclick="closePopup()">Fechar</button>
+        </div>
+    </div>
+
+    <header>
+        <div class="titulo-janela">
+            <h1>Bibliomap</h1> <!-- Título atualizado -->
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home"><i class="fas fa-home"></i> Início</a></li>
+                <li><a href="#avaliacoes"><i class="fas fa-star"></i> Avaliações</a></li>
+                <li><a href="#sobre"><i class="fas fa-info-circle"></i> Sobre</a></li>
+                <li><a href="#contato"><i class="fas fa-envelope"></i> Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <!-- Lado Esquerdo: Avaliações -->
+        <section class="avaliacoes">
+            <h2>Avaliações</h2>
+            
+            <div class="avaliacao">
+                <h3>Livraria ABC</h3>
+                <div class="estrela">
+                    <span>★★★★☆</span>
+                </div>
+                <p>Excelente variedade de livros e ótimo atendimento!</p>
+            </div>
+
+            <div class="avaliacao">
+                <h3>Banca XYZ</h3>
+                <div class="estrela">
+                    <span>★★★☆☆</span>
+                </div>
+                <p>Boa seleção de revistas, mas o atendimento poderia melhorar.</p>
+            </div>
+
+            <div class="avaliacao">
+                <h3>Biblioteca Central</h3>
+                <div class="estrela">
+                    <span>★★★★★</span>
+                </div>
+                <p>Ótima infraestrutura e grande acervo de livros acadêmicos.</p>
+            </div>
+
+            <div class="formulario-avaliacao">
+                <h3>Deixe sua avaliação</h3>
+                <form>
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="nome" name="nome" required><br><br>
+
+                    <label for="avaliacao">Avaliação (1 a 5 estrelas):</label><br>
+                    <input type="radio" id="estrela5" name="estrela" value="5"> 5 Estrelas
+                    <input type="radio" id="estrela4" name="estrela" value="4"> 4 Estrelas
+                    <input type="radio" id="estrela3" name="estrela" value="3"> 3 Estrelas
+                    <input type="radio" id="estrela2" name="estrela" value="2"> 2 Estrelas
+                    <input type="radio" id="estrela1" name="estrela" value="1"> 1 Estrela
+                    <br><br>
+
+                    <label for="comentario">Comentário:</label><br>
+                    <textarea id="comentario" name="comentario" rows="4" cols="50" required></textarea><br><br>
+
+                    <button type="submit">Enviar Avaliação</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Lado Direito: Mapa -->
+        <section class="mapa">
+            <h2>Localização</h2>
+            <div id="mapa">
+                <!-- Aqui é onde o mapa será exibido com a API em Python -->
+                <p>O mapa será carregado aqui.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Bibliomap. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        window.onload = function() {
+            document.getElementById("popup").style.display = "flex"; // Exibe o popup de boas-vindas
+        };
+
+        function closePopup() {
+            document.getElementById("popup").style.display = "none"; // Fecha o popup
+        }
+    </script>
+</body>
+</html>
