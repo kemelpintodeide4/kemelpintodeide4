@@ -1,0 +1,19 @@
+from flask import Flask, render_template
+
+app = Flask(__name__)
+
+# Lista de locais com nome e coordenadas (latitude e longitude)
+locations = [
+    {"name": "Biblioteca Central", "lat": -23.5558, "lng": -46.6396},
+    {"name": "Livraria Cultura", "lat": -23.5645, "lng": -46.6529},
+    {"name": "Banca da Esquina", "lat": -23.5570, "lng": -46.6345}
+]
+
+@app.route("/")
+def index():
+    # Renderiza o template HTML e passa os dados das localizações para o front-end
+    return render_template("index.html", locations=locations)
+
+if __name__ == "__main__":
+    # Inicia o servidor Flask
+    app.run(debug=True)
