@@ -4,40 +4,37 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bibliomap</title> <!-- Alterado para o nome do site -->
-    <link rel="stylesheet" href="dora.css"> <!-- Link para o arquivo CSS externo -->
-    <link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet"> <!-- Fonte Creepster -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- FontAwesome -->
+    <title>Bibliomap</title>
+    <link rel="stylesheet" href="dora.css"> <!-- Arquivo CSS externo -->
+    <link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <!-- Popup de Boas-vindas -->
-    <div id="popup" class="popup">
-        <div class="popup-content">
-            <h2>Obrigado por visitar o Bibliomap!</h2>
-            <p>Nos deixe sua avaliação para melhorar nosso serviço!</p>
-            <button onclick="closePopup()">Fechar</button>
-        </div>
-    </div>
-
+    <!-- Cabeçalho -->
     <header>
         <div class="titulo-janela">
-            <h1>Bibliomap</h1> <!-- Título atualizado -->
+            <h1>Bibliomap</h1>
         </div>
         <nav>
             <ul>
                 <li><a href="#home"><i class="fas fa-home"></i> Início</a></li>
                 <li><a href="#avaliacoes"><i class="fas fa-star"></i> Avaliações</a></li>
                 <li><a href="#sobre"><i class="fas fa-info-circle"></i> Sobre</a></li>
-                <li><a href="#contato"><i class="fas fa-envelope"></i> Contato</a></li>
             </ul>
         </nav>
+        <!-- Botão Sign-In -->
+        <div class="login">
+            <a href="#login" target="_self"> <!-- Link para a nova página ou seção -->
+                <button id="signin-button">Sign-In</button>
+            </a>
+        </div>
     </header>
 
+    <!-- Conteúdo Principal -->
     <main class="container">
         <!-- Lado Esquerdo: Avaliações -->
         <section class="avaliacoes">
             <h2>Avaliações</h2>
-            
             <div class="avaliacao">
                 <h3>Livraria ABC</h3>
                 <div class="estrela">
@@ -88,8 +85,7 @@
         <section class="mapa">
             <h2>Localização</h2>
             <div id="mapa">
-                <!-- Aqui é onde o mapa será exibido com a API em Python -->
-                <p>O mapa será carregado aqui.</p>
+                <!-- O mapa será carregado aqui com a API de sua escolha -->
             </div>
         </section>
     </main>
@@ -98,14 +94,9 @@
         <p>&copy; 2024 Bibliomap. Todos os direitos reservados.</p>
     </footer>
 
-    <script>
-        window.onload = function() {
-            document.getElementById("popup").style.display = "flex"; // Exibe o popup de boas-vindas
-        };
-
-        function closePopup() {
-            document.getElementById("popup").style.display = "none"; // Fecha o popup
-        }
-    </script>
+    <!-- Scripts -->
+    <script src="scripts.js"></script>
 </body>
 </html>
+
+
