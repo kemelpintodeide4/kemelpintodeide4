@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bibliomap</title>
     <link rel="stylesheet" href="dora.css"> <!-- Arquivo CSS externo -->
-    <link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
@@ -22,9 +22,8 @@
                 <li><a href="#sobre"><i class="fas fa-info-circle"></i> Sobre</a></li>
             </ul>
         </nav>
-        <!-- Botão Sign-In -->
         <div class="login">
-            <a href="#login" target="_self"> <!-- Link para a nova página ou seção -->
+            <a href="#login" target="_self">
                 <button id="signin-button">Sign-In</button>
             </a>
         </div>
@@ -32,7 +31,6 @@
 
     <!-- Conteúdo Principal -->
     <main class="container">
-        <!-- Lado Esquerdo: Avaliações -->
         <section class="avaliacoes">
             <h2>Avaliações</h2>
             <div class="avaliacao">
@@ -42,23 +40,6 @@
                 </div>
                 <p>Excelente variedade de livros e ótimo atendimento!</p>
             </div>
-
-            <div class="avaliacao">
-                <h3>Banca XYZ</h3>
-                <div class="estrela">
-                    <span>★★★☆☆</span>
-                </div>
-                <p>Boa seleção de revistas, mas o atendimento poderia melhorar.</p>
-            </div>
-
-            <div class="avaliacao">
-                <h3>Biblioteca Central</h3>
-                <div class="estrela">
-                    <span>★★★★★</span>
-                </div>
-                <p>Ótima infraestrutura e grande acervo de livros acadêmicos.</p>
-            </div>
-
             <div class="formulario-avaliacao">
                 <h3>Deixe sua avaliação</h3>
                 <form>
@@ -81,11 +62,10 @@
             </div>
         </section>
 
-        <!-- Lado Direito: Mapa -->
         <section class="mapa">
             <h2>Localização</h2>
             <div id="mapa">
-                <!-- O mapa será carregado aqui com a API de sua escolha -->
+                <p>O mapa será carregado aqui.</p>
             </div>
         </section>
     </main>
@@ -94,9 +74,7 @@
         <p>&copy; 2024 Bibliomap. Todos os direitos reservados.</p>
     </footer>
 
-    <!-- Scripts -->
-    <script src="scripts.js"></script>
+    <script src="dora.js"></script>
+
 </body>
 </html>
-
-
