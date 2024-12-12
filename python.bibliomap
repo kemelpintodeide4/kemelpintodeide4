@@ -1,19 +1,44 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request, jsonify
 
 app = Flask(__name__)
 
-# Lista de locais com nome e coordenadas (latitude e longitude)
+# Lista de locais fixos (exemplo inicial)
 locations = [
     {"name": "Biblioteca Central", "lat": -23.5558, "lng": -46.6396},
     {"name": "Livraria Cultura", "lat": -23.5645, "lng": -46.6529},
     {"name": "Banca da Esquina", "lat": -23.5570, "lng": -46.6345}
 ]
 
+# Lista de avaliações (exemplo inicial)
+avaliacoes = [
+    {"local": "Livraria ABC", "estrelas": 4, "comentario": "Excelente variedade de livros e ótimo atendimento!"},
+    {"local": "Banca XYZ", "estrelas": 3, "comentario": "Boa seleção de revistas, mas o atendimento poderia melhorar."},
+    {"local": "Biblioteca Central", "estrelas": 5, "comentario": "Ótima infraestrutura e grande acervo de livros acadêmicos."}
+]
+
 @app.route("/")
 def index():
-    # Renderiza o template HTML e passa os dados das localizações para o front-end
-    return render_template("index.html", locations=locations)
+    # Renderiza o HTML principal, passando os locais e avaliações para o front-end
+    return render_template("index.html", locations=locations, avaliacoes=avaliacoes)
+
+@app.route("/adicionar-avaliacao", methods=["POST"])
+def adicionar_avaliacao():
+    # Recebe dados do formulário enviado via POST
+    nome_local = request.form.get("nome_local")
+    estrelas = request.form.get("estrelas")
+    comentario = request.form.get("comentario")
+
+    # Adiciona a nova avaliação na lista
+    if nome_local and estrelas and comentario:
+        nova_avaliacao = {
+            "local": nome_local,
+            "estrelas": int(estrelas),
+            "comentario": comentario
+        }
+        avaliacoes.append(nova_avaliacao)
+        return jsonify({"mensagem": "Avaliação adicionada com sucesso!"}), 200
+    else:
+        return jsonify({"mensagem": "Erro: Todos os campos são obrigatórios!"}), 400
 
 if __name__ == "__main__":
-    # Inicia o servidor Flask
     app.run(debug=True)
