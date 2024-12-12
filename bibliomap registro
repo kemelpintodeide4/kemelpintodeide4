@@ -37,3 +37,99 @@
     </div>
 </body>
 </html>
+
+
+
+CSS:
+
+/* Estilo geral do corpo */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    padding: 20px;
+}
+
+/* Estilo do cabeçalho */
+.header-title {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.header-title h1 {
+    color: #4a90e2;
+    font-size: 36px;
+}
+
+/* Estilo do formulário de registro */
+.formulario-registro {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+}
+
+/* Títulos */
+.formulario-registro h2 {
+    color: #4a90e2;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Campos de entrada */
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+/* Botão de submit */
+button[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #4a90e2;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button[type="submit"]:hover {
+    background-color: #357ab8;
+}
+
+/* Espaçamento para os campos */
+br {
+    display: block;
+}
+
+/* Link de navegação */
+.registro-link {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.registro-link a {
+    color: #4a90e2;
+    text-decoration: underline;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.registro-link a:hover {
+    color: #357ab8;
+}
+
