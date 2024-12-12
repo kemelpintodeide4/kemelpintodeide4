@@ -1,0 +1,22 @@
+from flask import Flask, render_template, jsonify
+
+app = Flask(__name__)
+
+# Dados estáticos para exemplo
+locations = [
+    {"name": "Biblioteca Nacional", "lat": -22.9068, "lng": -43.1729},
+    {"name": "Livraria Cultura", "lat": -23.5614, "lng": -46.6556},
+    {"name": "Biblioteca Mário de Andrade", "lat": -23.5464, "lng": -46.6353},
+    {"name": "Livraria da Vila", "lat": -23.5700, "lng": -46.6890},
+]
+
+@app.route("/")
+def index():
+    return render_template("index.html")
+
+@app.route("/locations")
+def get_locations():
+    return jsonify(locations)
+
+if __name__ == "__main__":
+    app.run(debug=True)
